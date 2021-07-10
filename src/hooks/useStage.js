@@ -19,6 +19,7 @@ export const useStage = (player, resetPlayer) => {
                 return ack;
             }
             ack.push(row);
+            return ack;
         },[])
 
 
