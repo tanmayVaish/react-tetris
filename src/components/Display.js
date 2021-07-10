@@ -6,4 +6,4 @@ const Display = ({gameOver, text}) => (
     <StyledDisplay gameOver={gameOver}>{text}</StyledDisplay>
 )
 
-export default Display
+export default Display;

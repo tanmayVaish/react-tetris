@@ -21,9 +21,7 @@ const Tetris = () => {
     const [stage, setStage, rowsCleared] = useStage(player, resetPlayer);
     const [score, setScore, rows, setRows, level, setLevel] = useGameStatus(rowsCleared);
 
-    console.log(stage);
     console.log('re-render');
-
 
     const movePlayer = dir => {
         if (!checkCollision(player, stage, {x: dir, y: 0})) {
@@ -33,12 +31,12 @@ const Tetris = () => {
 
     const startGame = () => {
         setStage(createStage());
-        resetPlayer();
-        setGameOver(false);
         setDropTime(1000);
+        setGameOver(false);
         setScore(0);
         setLevel(0);
         setRows(0);
+        resetPlayer();
     }
 
     const drop = () => {
@@ -59,7 +57,7 @@ const Tetris = () => {
             updatePlayerPos({x: 0, y: 0, collided: true});
         }
 
-    }
+    };
 
     const dropPlayer = () => {
         drop();
@@ -90,12 +88,9 @@ const Tetris = () => {
                 <Stage stage={stage}/>
                 <aside>
 
-                    // use of ternary operator to show displays iff game is not over
 
-                    {gameOver ? (
-                            <Display gameOver={gameOver} text="Game Over"/>
-                        ) :
-                        (
+                    {gameOver ? (<Display gameOver={gameOver} text="Game Over"/>)
+                        : (
                             <div>
                                 <Display text={`Score: ${score}`}/>
                                 <Display text={`Rows: ${rows}`}/>
@@ -107,6 +102,6 @@ const Tetris = () => {
             </StyledTetris>
         </StyledTetrisWrapper>
     );
-}
+};
 
 export default Tetris;

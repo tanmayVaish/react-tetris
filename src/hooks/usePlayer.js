@@ -23,7 +23,7 @@ export const usePlayer = () => {
 
     const playerRotate = (stage, dir) => {
 
-        const clonedPlayer = JSON.parse(JSON.stringify((player)));
+        const clonedPlayer = JSON.parse(JSON.stringify(player));
         clonedPlayer.tetromino = rotate(clonedPlayer.tetromino, dir);
 
 
@@ -48,15 +48,15 @@ export const usePlayer = () => {
             ...prev,
             pos: {x: (prev.pos.x += x), y: (prev.pos.y += y)},
             collided,
-        }))
-    }
+        }));
+    };
 
     const resetPlayer = useCallback(() => {
         setPlayer({
             pos: {x: STAGE_WIDTH / 2 - 2, y: 0},
             tetromino: randomTetrominos().shape,
             collided: false,
-        })
+        });
     }, [])
 
 
