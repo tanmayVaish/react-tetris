@@ -8,10 +8,12 @@ export const StyledDisplay = styled.div`
   padding: 20px;
   border: 4px;
   min-height: 30px;
-  width: 100%;
+  width:18vw;
   border-radius: 20px;
-  color: ${props => (props.gameOver ? 'red' : '#999')};
-  background: #000;
+  color: ${props => (props.gameOver ? 'red' : 'black')};
+  background: greenyellow;
+  box-shadow: white 0vh 0vh 1vh 0.1vh;
   font-family: Pixel,Arial, Helvetica, sans-serif;
-  font-size: 0.8rem;
+  font-size: 1.8vh;
+  
     `

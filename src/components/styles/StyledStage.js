@@ -14,7 +14,7 @@ export const StyledStage = styled.div`
   border: 2px solid #333;
   width: 100%;
   max-width: 25vw;
-  background: #111;
+  background: rgba(50,50,50,0.3);
   );
   
     `

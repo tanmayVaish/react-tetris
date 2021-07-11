@@ -14,6 +14,9 @@ import StartButton from "./StartButton";
 
 const Tetris = () => {
 
+    let toggle = document.querySelector('.toggle');
+
+
     const [dropTime, setDropTime] = useState(null);
     const [gameOver, setGameOver] = useState(false);
 
@@ -37,6 +40,7 @@ const Tetris = () => {
         setLevel(0);
         setRows(0);
         resetPlayer();
+        toggle.innerHTML = 'RESET GAME';
     }
 
     const drop = () => {
@@ -87,7 +91,6 @@ const Tetris = () => {
             <StyledTetris>
                 <Stage stage={stage}/>
                 <aside>
-
 
                     {gameOver ? (<Display gameOver={gameOver} text="Game Over"/>)
                         : (
